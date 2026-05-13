@@ -56,6 +56,7 @@ section {
     padding: 20px;
     background: white;
     border-radius: 8px;
+    box-shadow: 0 1px 7px slategrey;
 }
 
 footer{
@@ -67,6 +68,14 @@ footer{
 
 pre{
     font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    width: 400px;
+    float: right;
+
 }
 
 
