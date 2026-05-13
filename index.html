@@ -59,6 +59,42 @@
             </pre>
         </div>
         
+        <h2>Lekérdezések tipusai:</h2>
+
+        <div>
+            <h3>Adatbevitel (INSERT)</h3>
+            <p>Új sorokat vagy rekordokat ad hozzá a táblához.</p>
+            <h4>Példa:</h4>
+            <pre>
+                INSERT INTO Felhasznalok (ID, Felhasznalonev, Email, Eletkor)
+                VALUES (1, 'KovacsJanos', 'janos@example.com', 25);
+            </pre>
+
+            <h3>Adatlekérdezés (SELECT)</h3>
+            <p>Lekéri az adatokat az adatbázisból. Szűrhetünk vele oszlopokra vagy meghatározott feltételekre.</p>
+            <h4>Példa:</h4>
+            <pre>
+                SELECT Felhasznalonev, Email 
+                FROM Felhasznalok 
+                WHERE Eletkor > 20;
+            </pre>
+
+            <h3>Adatmódosítás (UPDATE)</h3>
+            <p>Meglévő adatok frissítésére szolgál. Fontos: Mindig használjunk WHERE feltételt, különben az összes sor módosul!</p>
+            <h4>Példa:</h4>
+            <pre>
+            UPDATE Felhasznalok 
+            SET Email = 'ujemail@example.com' 
+            WHERE ID = 1;</pre>
+
+            <h3>Adattörlés (DELETE)</h3>
+            <p>Törli a rekordokat a táblából. Itt is kritikus a WHERE feltétel használata a véletlen adatvesztés elkerülése érdekében.</p>
+            <h4>Példa:</h4>
+            <pre>
+            DELETE FROM Felhasznalok 
+            WHERE ID = 1;
+            </pre>
+        </div>
 
 
 
