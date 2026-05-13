@@ -27,25 +27,34 @@
         <h2 id="korlatozasok">Táblákban alkalmazható korlátozások:</h2>
 
         <div>
-            <h3>PRIMARY KEY(Elsődleges kulcs):</h3>
-            <p>Egyedileg azonosít minden rekordot a táblában. Nem tartalmazhat NULL értéket, és minden értéknek unikálisnak kell lennie.</p>
+            <table>
+                <tr>
+                    <td><h3>PRIMARY KEY(Elsődleges kulcs):</h3></td>
+                    <td>Egyedileg azonosít minden rekordot a táblában. Nem tartalmazhat NULL értéket, és minden értéknek unikálisnak kell lennie.</td>
+                </tr>
+                <tr>
+                    <td><h3>FOREIGN KEY (Idegen kulcs):</h3></td>
+                    <td>Kapcsolatot teremt két tábla között. Biztosítja, hogy a mező értéke megegyezzen egy másik tábla elsődleges kulcsával.</td>
+                </tr>
+                <tr>
+                    <td><h3>UNIQUE:</h3></td>
+                    <td>Garantálja, hogy egy oszlopban minden érték különböző legyen (hasonló a Primary Key-hez, de egy táblában több UNIQUE oszlop is lehet).</td>
+                </tr>
+                <tr>
+                    <td><h3>NOT NULL:</h3></td>
+                    <td>Megakadályozza, hogy az adott oszlop üresen (NULL értékkel) maradjon.</td>
+                </tr>
+                <tr>
+                    <td><h3>DEFAULT:</h3></td>
+                    <td>Alapértelmezett értéket ad az oszlopnak, ha a rögzítéskor nincs megadva konkrét adat.</td>
+                </tr>
+                <tr>
+                    <td><h3>CHECK:</h3></td>
+                    <td>Korlátozza az oszlopba kerülő értékek tartományát egy meghatározott feltétel alapján.</td>
+                </tr>
+            </table>
 
-            <h3>FOREIGN KEY (Idegen kulcs):</h3>
-            <p>Kapcsolatot teremt két tábla között. Biztosítja, hogy a mező értéke megegyezzen egy másik tábla elsődleges kulcsával.</p>
-
-            <h3>UNIQUE:</h3>
-            <p>Garantálja, hogy egy oszlopban minden érték különböző legyen (hasonló a Primary Key-hez, de egy táblában több UNIQUE oszlop is lehet).</p>
-
-            <h3>NOT NULL:</h3>
-            <p>Megakadályozza, hogy az adott oszlop üresen (NULL értékkel) maradjon.</p>
-
-            <h3>DEFAULT:</h3>
-            <p>Alapértelmezett értéket ad az oszlopnak, ha a rögzítéskor nincs megadva konkrét adat.</p>
-
-            <h3>CHECK:</h3>
-            <p>Korlátozza az oszlopba kerülő értékek tartományát egy meghatározott feltétel alapján.</p>
-
-            <h3>Példa:</h3>
+            <p><h3>Példa:</h3>
             <pre>
                 CREATE TABLE Felhasznalok (
                     ID INT PRIMARY KEY,                  -- Elsődleges kulcs
@@ -56,47 +65,58 @@
                     CsoportID INT,
                     FOREIGN KEY (CsoportID) REFERENCES Csoportok(ID) -- Idegen kulcs
                 );
-            </pre>
+            </pre></p>
         </div>
         
         <h2 id="lekerdez">Lekérdezések tipusai:</h2>
 
         <div>
-            <h3>Adatbevitel (INSERT)</h3>
-            <p>Új sorokat vagy rekordokat ad hozzá a táblához.</p>
-            <h4>Példa:</h4>
+            <table>
+                <tr>
+                    <td><h3>Adatbevitel (INSERT)</h3></td>
+                    <td><p>Új sorokat vagy rekordokat ad hozzá a táblához.</p></td>
+                </tr>
+                <tr>
+                    <td><h3>Adatlekérdezés (SELECT)</h3></td>
+                    <td><p>Lekéri az adatokat az adatbázisból. Szűrhetünk vele oszlopokra vagy meghatározott feltételekre.</p></td>
+                </tr>
+                <tr>
+                    <td><h3>Adatmódosítás (UPDATE)</h3></td>
+                    <td><p>Meglévő adatok frissítésére szolgál. Fontos: Mindig használjunk WHERE feltételt, különben az összes sor módosul!</p></td>
+                </tr>
+                <tr>
+                    <td><h3>Adattörlés (DELETE)</h3></td>
+                    <td><p>Törli a rekordokat a táblából. Itt is kritikus a WHERE feltétel használata a véletlen adatvesztés elkerülése érdekében.</p></td>
+                </tr>
+            </table>
+
+
+            <h4>INSERT Példa:</h4>
             <pre>
                 INSERT INTO Felhasznalok (ID, Felhasznalonev, Email, Eletkor)
                 VALUES (1, 'KovacsJanos', 'janos@example.com', 25);
             </pre>
 
-            <h3>Adatlekérdezés (SELECT)</h3>
-            <p>Lekéri az adatokat az adatbázisból. Szűrhetünk vele oszlopokra vagy meghatározott feltételekre.</p>
-            <h4>Példa:</h4>
+            <h4>SELECT Példa:</h4>
             <pre>
                 SELECT Felhasznalonev, Email 
                 FROM Felhasznalok 
                 WHERE Eletkor > 20;
             </pre>
 
-            <h3>Adatmódosítás (UPDATE)</h3>
-            <p>Meglévő adatok frissítésére szolgál. Fontos: Mindig használjunk WHERE feltételt, különben az összes sor módosul!</p>
-            <h4>Példa:</h4>
+            <h4>UPDATE Példa:</h4>
             <pre>
             UPDATE Felhasznalok 
             SET Email = 'ujemail@example.com' 
             WHERE ID = 1;</pre>
 
-            <h3>Adattörlés (DELETE)</h3>
-            <p>Törli a rekordokat a táblából. Itt is kritikus a WHERE feltétel használata a véletlen adatvesztés elkerülése érdekében.</p>
-            <h4>Példa:</h4>
+            <h4>DELETE Példa:</h4>
             <pre>
             DELETE FROM Felhasznalok 
             WHERE ID = 1;
             </pre>
         </div>
     </main>
-    
 
 </body>
 </html>
