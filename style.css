@@ -76,6 +76,11 @@ pre{
     font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
 }
 
+img {
+    display: block;
+    margin: 0 auto;
+}
+
 
 @media (max-width: 576px){
     body{
