@@ -51,6 +51,13 @@ h2{
    font-weight: bold;
 }
 
+pre {
+    overflow-x: auto;
+    max-width: 100%;
+    white-space: pre;
+}
+   
+
 section {
     margin: 30px;
     padding: 20px;
