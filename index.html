@@ -27,25 +27,34 @@
         <h2 id="korlatozasok">Táblákban alkalmazható korlátozások:</h2>
 
         <div>
-            <h3>PRIMARY KEY(Elsődleges kulcs):</h3>
-            <p>Egyedileg azonosít minden rekordot a táblában. Nem tartalmazhat NULL értéket, és minden értéknek unikálisnak kell lennie.</p>
+            <table>
+                <tr>
+                    <td><h3>PRIMARY KEY(Elsődleges kulcs):</h3></td>
+                    <td>Egyedileg azonosít minden rekordot a táblában. Nem tartalmazhat NULL értéket, és minden értéknek unikálisnak kell lennie.</td>
+                </tr>
+                <tr>
+                    <td><h3>FOREIGN KEY (Idegen kulcs):</h3></td>
+                    <td>Kapcsolatot teremt két tábla között. Biztosítja, hogy a mező értéke megegyezzen egy másik tábla elsődleges kulcsával.</td>
+                </tr>
+                <tr>
+                    <td><h3>UNIQUE:</h3></td>
+                    <td>Garantálja, hogy egy oszlopban minden érték különböző legyen (hasonló a Primary Key-hez, de egy táblában több UNIQUE oszlop is lehet).</td>
+                </tr>
+                <tr>
+                    <td><h3>NOT NULL:</h3></td>
+                    <td>Megakadályozza, hogy az adott oszlop üresen (NULL értékkel) maradjon.</td>
+                </tr>
+                <tr>
+                    <td><h3>DEFAULT:</h3></td>
+                    <td>Alapértelmezett értéket ad az oszlopnak, ha a rögzítéskor nincs megadva konkrét adat.</td>
+                </tr>
+                <tr>
+                    <td><h3>CHECK:</h3></td>
+                    <td>Korlátozza az oszlopba kerülő értékek tartományát egy meghatározott feltétel alapján.</td>
+                </tr>
+            </table>
 
-            <h3>FOREIGN KEY (Idegen kulcs):</h3>
-            <p>Kapcsolatot teremt két tábla között. Biztosítja, hogy a mező értéke megegyezzen egy másik tábla elsődleges kulcsával.</p>
-
-            <h3>UNIQUE:</h3>
-            <p>Garantálja, hogy egy oszlopban minden érték különböző legyen (hasonló a Primary Key-hez, de egy táblában több UNIQUE oszlop is lehet).</p>
-
-            <h3>NOT NULL:</h3>
-            <p>Megakadályozza, hogy az adott oszlop üresen (NULL értékkel) maradjon.</p>
-
-            <h3>DEFAULT:</h3>
-            <p>Alapértelmezett értéket ad az oszlopnak, ha a rögzítéskor nincs megadva konkrét adat.</p>
-
-            <h3>CHECK:</h3>
-            <p>Korlátozza az oszlopba kerülő értékek tartományát egy meghatározott feltétel alapján.</p>
-
-            <h3>Példa:</h3>
+            <p><h3>Példa:</h3>
             <pre>
                 CREATE TABLE Felhasznalok (
                     ID INT PRIMARY KEY,                  -- Elsődleges kulcs
@@ -56,7 +65,7 @@
                     CsoportID INT,
                     FOREIGN KEY (CsoportID) REFERENCES Csoportok(ID) -- Idegen kulcs
                 );
-            </pre>
+            </pre></p>
         </div>
         
         <h2 id="lekerdez">Lekérdezések tipusai:</h2>
@@ -96,7 +105,6 @@
             </pre>
         </div>
     </main>
-    
 
 </body>
 </html>
