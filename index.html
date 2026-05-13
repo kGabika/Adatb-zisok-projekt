@@ -23,9 +23,42 @@
     </header>
 
     <main>
+        
+        <h2>Táblákban alkalmazható korlátozások:</h2>
 
+        <div>
+            <h3>PRIMARY KEY(Elsődleges kulcs):</h3>
+            <p>Egyedileg azonosít minden rekordot a táblában. Nem tartalmazhat NULL értéket, és minden értéknek unikálisnak kell lennie.</p>
 
+            <h3>FOREIGN KEY (Idegen kulcs):</h3>
+            <p>Kapcsolatot teremt két tábla között. Biztosítja, hogy a mező értéke megegyezzen egy másik tábla elsődleges kulcsával.</p>
 
+            <h3>UNIQUE:</h3>
+            <p>Garantálja, hogy egy oszlopban minden érték különböző legyen (hasonló a Primary Key-hez, de egy táblában több UNIQUE oszlop is lehet).</p>
+
+            <h3>NOT NULL:</h3>
+            <p>Megakadályozza, hogy az adott oszlop üresen (NULL értékkel) maradjon.</p>
+
+            <h3>DEFAULT:</h3>
+            <p>Alapértelmezett értéket ad az oszlopnak, ha a rögzítéskor nincs megadva konkrét adat.</p>
+
+            <h3>CHECK:</h3>
+            <p>Korlátozza az oszlopba kerülő értékek tartományát egy meghatározott feltétel alapján.</p>
+
+            <h3>Példa:</h3>
+            <pre>
+                CREATE TABLE Felhasznalok (
+                    ID INT PRIMARY KEY,                  -- Elsődleges kulcs
+                    Felhasznalonev VARCHAR(50) NOT NULL, -- Nem lehet üres
+                    Email VARCHAR(100) UNIQUE,           -- Minden email egyedi
+                    Eletkor INT CHECK (Eletkor >= 18),   -- Csak 18 év felettiek
+                    Regisztracio DATE DEFAULT CURRENT_DATE, -- Alapértelmezett mai dátum
+                    CsoportID INT,
+                    FOREIGN KEY (CsoportID) REFERENCES Csoportok(ID) -- Idegen kulcs
+                );
+            </pre>
+        </div>
+        
 
 
 
