@@ -5,9 +5,8 @@
 }
 
 
-
 header {
-    background: silver;
+    background: black;
     color: white;
     padding: 20px;
 }
@@ -34,7 +33,7 @@ nav a:hover {
 table {
   width: 100%;
   border-collapse: collapse;
-  background: wheat;
+  background: rgb(151, 150, 184);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 1px 7px slategrey;
@@ -52,6 +51,8 @@ h2{
 }
 
 pre {
+
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
     overflow-x: auto;
     max-width: 100%;
     white-space: pre;
@@ -61,34 +62,31 @@ pre {
 section {
     margin: 30px;
     padding: 20px;
-    background: white;
+    background: gainsboro;
     border-radius: 8px;
     box-shadow: 0 1px 7px slategrey;
 }
 
 footer{
-    margin: 10px;
-    padding: 10px;
+
     background-color: aquamarine;
     text-align: center;
 }
 
-pre{
-    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
-}
 
 img{
     max-width: 100%;
     height: auto;
-    width: 400px;
-    float: right;
-
+    width: 520px;
+    display: block;
+    margin: 0 auto;
+    
 }
 
 
 @media (max-width: 576px){
     body{
-        background-color: aqua;
+        background-color: rgb(225, 164, 233);
             }
     nav { 
         flex-direction: column;
@@ -114,18 +112,18 @@ img{
 
 @media (min-width: 577px) and (max-width: 768px){
     body{
-        background-color: blueviolet;
+        background-color: rgb(188, 89, 212);
     }
 }
 
 @media (min-width: 769px) and (max-width: 1024px){
     body{
-        background-color: brown;
+        background-color: rgb(143, 64, 189);
     }
 }
 
 @media (min-width: 1025px){
     body{
-        background-color: yellow;
+        background-color: purple;
     }
 }
